@@ -3,7 +3,7 @@ package javaBeans;
 import jakarta.xml.bind.annotation.*;
 
 import java.util.ArrayList;
-@XmlType(propOrder={"nombre","localidad"})
+@XmlType(propOrder={"nombre","localidad", "empleadosDep"})
 public class Departamento {
     private Integer id;
     private String nombre;
@@ -36,7 +36,8 @@ public class Departamento {
     public void setLocalidad(String localidad) {
         this.localidad = localidad;
     }
-    @XmlTransient
+    @XmlElementWrapper(name="empleados")
+    @XmlElement(name="empleado")
     public ArrayList<Empleado> getEmpleadosDep() {
         return empleadosDep;
     }
