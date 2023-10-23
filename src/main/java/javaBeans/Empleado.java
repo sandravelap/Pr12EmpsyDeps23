@@ -6,7 +6,7 @@ import jakarta.xml.bind.annotation.XmlTransient;
 import jakarta.xml.bind.annotation.XmlType;
 
 import java.util.Date;
-@XmlRootElement(name="empleado")
+//@XmlRootElement(name="empleado") no es necesario definirlo como RootElement
 @XmlType(propOrder = {"nombre","sueldo","agnoNac","antig"})
 public class Empleado {
     private String nombre;
